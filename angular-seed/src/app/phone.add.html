@@ -1,0 +1,53 @@
+
+<form>
+<div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <legend>Add / Edit Contact</legend>
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    <input class="form-control" name="firstname" placeholder="First Name" type="text" [(ngModel)]="firstName"
+                        required autofocus />
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    <input class="form-control" name="lastname" placeholder="Last Name" type="text" required [(ngModel)]="lastName" />
+                </div>
+            </div>
+            <input class="form-control" name="mobile" placeholder="Mobile Number" type="text" [(ngModel)]="mobileNumber" />
+			<input class="form-control" name="landline" placeholder="Landline Number" type="text"  [(ngModel)]="landLineNumber" />
+			<input class="form-control" name="email" placeholder="Email" type="email"  [(ngModel)]="email" />
+			<label class="radio-inline">
+                <input type="radio" name="sex" id="inlineCheckbox1" value="male" [(ngModel)]="gender"  />
+                Male
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="sex" id="inlineCheckbox2" value="female" [(ngModel)]="gender"  />
+                Female
+            </label><br/><br/>
+            
+            <label for="">
+                Birth Date</label>
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control">
+                        <option value="Month"  >Month</option>
+                    </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control">
+                        <option value="Day" >Day</option>
+                    </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control">
+                        <option value="Year" >Year</option>
+                    </select>
+                </div>
+            </div>
+			<input class="form-control" name="company" placeholder="Company" type="text" [(ngModel)]="company" />
+            <input class="form-control" name="jobtitle" placeholder="Job Title" type="text"  [(ngModel)]="jobTitle" />
+			<br/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onSubmit()">
+                Submit</button>
+        </div>
+    </div>  
+    </form>
