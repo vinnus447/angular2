@@ -1,0 +1,110 @@
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item">
+        <a class="pure-menu-link" (click)="login('confirmlogout')" value="login">logout</a>
+      </li>
+      <li class="pure-menu-item">
+        <a class="pure-menu-link" (click)="dashboard('confirmdashboard')" value="dashboard">Dashboard</a>
+      </li>
+      <li class="pure-menu-item">
+          <button type="submit" (click)="createNewIncident('confirmrequest')" class="pure-button pure-button-primary" value="createIncident">Create a New Incident</button>
+        </li>
+    </ul>
+  </div>
+
+  <div class="container">
+      <div class="left">
+          Online UI
+      </div>
+      <div class="middle" >
+        <h3 style="margin-left:5px">MEMBER INCIDENT HISTORY</h3>
+
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-1-3">
+                <label for="member2firstname" style="margin-left:5px">MEMBER ID</label> <input
+                  id="member2firstname" class="pure-u-23-24" type="text" style="margin-left:5px">
+              </div>
+              <div class="pure-u-1 pure-u-md-1-3">
+                <label for="member2middlename"style="margin-left:5px">First Name</label> <input
+                  id="member2middlename" class="pure-u-23-24" type="text" style="margin-left:5px">
+              </div>
+              <div class="pure-u-1 pure-u-md-1-4">
+                  <label for="member2middlename" style="margin-left:5px">Middle Inital Name</label> <input
+                    id="member2middlename" class="pure-u-23-24" type="text"style="margin-left:5px">
+                </div>
+              <div class="pure-u-1 pure-u-md-1-3">
+                  <div style="width:50%; min-height:20px">
+                    </div>
+                
+                <label for="member2lastname" style="margin-left:5px">Last Name</label> <input
+                  id="member2lastname" class="pure-u-23-24" type="text" style="margin-left:5px">
+              </div>
+              <div class="pure-u-1 pure-u-md-1-3">
+                  <div style="width:50%; min-height:20px">
+                    </div>
+                
+                  <label for="member2lastname" style="margin-left:5px">Suffix</label> <input
+                    id="member2lastname" class="pure-u-23-24" type="text" style="margin-left:5px">
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                    <div style="width:50%; min-height:20px">
+                      </div>
+                    <form action="/action_page.php" style="margin-left:5px">
+                      DATE OF BIRTH <br> <input type="date"
+                        name="dateincident" style="margin-left:5px">
+                    </form>
+                  </div>
+        </div>
+        <div style="width:50%; min-height:20px">
+          </div>
+        <h4 style="margin-left:5px">INCIDENTS & ASSOCIATED ATTACHMENTS</h4> 
+         
+        <div style="width:50%; min-height:5px">
+          </div>
+        <table class="pure-table pure-table-bordered" style="margin:5px">
+            <thead>
+              <tr>
+                  
+                <th style="width:8%" >Attachments</th>
+                <th style="width:8%">Incident #</th>
+                <th style="width:8%">Incident Type</th>
+                <th style="width:8%">Agency</th>
+                <th style="width:8%">Incident Status</th>
+                <th style="width:8%">Date Occurred</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let history of viewHistoryList">
+                  <td>{{history.Attachments}}</td>
+                  <td>{{history.Incident}}</td>
+                  <td>{{history.IncidentType}}</td>
+                  <td>{{history.Agency}}</td>
+                  <td>{{history.IncidentStatus}}</td>
+                  <td>{{history.DateOccurred}}</td>
+                  
+                </tr>
+                
+    
+            </tbody>
+          </table>
+          <div *ngFor="let history of viewHistoryList" style="display:grid;border-top: 1px solid black;margin:5px;padding:5px">
+           <div style="display:inline-flex;">
+            <div ><button style="width:30px;height:30px" (click)="expandNextDiv()"></button></div>
+            <div style="margin:5px;padding:5px">{{history.Attachments}}</div>
+            <div style="margin:5px;padding:5px">{{history.Incident}}</div>
+            <div style="margin:5px;padding:5px">{{history.IncidentType}}</div>
+            <div style="margin:5px;padding:5px">{{history.Agency}}</div>
+            <div style="margin:5px;padding:5px">{{history.IncidentStatus}}</div>
+            <div style="margin:5px;padding:5px">{{history.DateOccurred}}</div>
+          </div>
+          <div id="check" style="display:none;">
+            <div style="margin:5px;padding:5px">{{history.Attachments}}</div>
+            <div style="margin:5px;padding:5px">{{history.Incident}}</div>
+            <div style="margin:5px;padding:5px">{{history.IncidentType}}</div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+  
